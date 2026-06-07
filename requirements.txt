@@ -1,0 +1,7 @@
+python-docx
+PyMuPDF
+pdfplumber
+pywin32; platform_system == "Windows"
+jinja2
+scikit-learn
+numpy

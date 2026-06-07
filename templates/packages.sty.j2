@@ -1,0 +1,126 @@
+% ============================================
+% 论文格式样式 (由 thesis-template 自动生成)
+% ============================================
+
+% --- 行距 ---
+\linespread{ {{ spec.page_setup.line_spread }} }
+
+% --- 章节标题格式 (ctex 原生) ---
+% 一级标题(章): {{ spec.heading1.font_cn }} {{ spec.heading1.font_size_cmd }}
+\ctexset{
+  chapter = {
+    format = \centering{{ spec.heading1.font_size_cmd }}{{ spec.heading1.font_cn }},
+    name = {第,章},
+    number = \arabic{chapter},
+    aftername = \quad,
+    beforeskip = {0pt},
+    afterskip = {18pt},
+  },
+  section = {
+    format = {{ spec.heading2.font_size_cmd }}{{ spec.heading2.font_cn }},
+    aftername = \quad,
+    beforeskip = {12pt},
+    afterskip = {6pt},
+  },
+  subsection = {
+    format = {{ spec.heading3.font_size_cmd }}{{ spec.heading3.font_cn }},
+    aftername = \quad,
+    beforeskip = {6pt},
+    afterskip = {3pt},
+  },
+}
+
+% --- 图表标题格式 ---
+\DeclareCaptionLabelFormat{thesisfig}{图\thechapter.\arabic{figure}}
+\captionsetup[figure]{
+  labelformat=thesisfig,
+  labelsep=quad,
+  justification=centering,
+  font=small
+}
+
+\DeclareCaptionLabelFormat{thesistab}{表\thechapter.\arabic{table}}
+\captionsetup[table]{
+  labelformat=thesistab,
+  labelsep=quad,
+  position=above,
+  font=small
+}
+
+% --- 公式编号 (X-Y) ---
+\numberwithin{equation}{chapter}
+
+% --- 页眉页脚 ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{ {{ spec.header_font.font_size_cmd }}{{ spec.header_font.font_cn }} <<< 页眉文字 >>> }
+\fancyfoot[C]{ \thepage }
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% --- 目录标题格式 ---
+\renewcommand{\contentsname}{ {{ spec.toc_title.font_size_cmd }}{{ spec.toc_title.font_cn }} 目\quad 录 }
+
+% ============================================
+% 专用环境：中文摘要
+% ============================================
+\newenvironment{ChineseAbstract}
+{
+  \newpage
+  {
+    \centering
+    {{ spec.abstract_cn_title.font_size_cmd }}{{ spec.abstract_cn_title.font_cn }}
+    摘\quad 要
+    \vspace{\baselineskip}
+  }
+  \par
+  {{ spec.abstract_cn_body.font_size_cmd }}{{ spec.abstract_cn_body.font_cn }}
+}
+{
+  \par
+}
+
+% ============================================
+% 专用环境：英文摘要
+% ============================================
+\newenvironment{EnglishAbstract}
+{
+  \newpage
+  {
+    \centering
+    {{ spec.abstract_en_title.font_size_cmd }}{{ spec.abstract_en_title.font_en }}
+    \textbf{Abstract}
+    \vspace{\baselineskip}
+  }
+  \par
+  {{ spec.abstract_en_body.font_size_cmd }}{{ spec.abstract_en_body.font_en }}
+}
+{
+  \par
+}
+
+% ============================================
+% 专用命令：中文关键词
+% ============================================
+\newcommand{\ChineseKeyword}[1]{
+  \vspace{\baselineskip}
+  \noindent
+  {{ '{' }}{{ spec.abstract_cn_keyword_label.font_size_cmd }}{{ spec.abstract_cn_keyword_label.font_cn }} 关键词：{{ '}' }}
+  {{ '{' }}{{ spec.abstract_cn_keyword_body.font_size_cmd }}{{ spec.abstract_cn_keyword_body.font_cn }} #1 {{ '}' }}
+  \par
+}
+
+% ============================================
+% 专用命令：英文关键词
+% ============================================
+\newcommand{\EnglishKeyword}[1]{
+  \vspace{\baselineskip}
+  \noindent
+  {{ '{' }}{{ spec.abstract_en_keyword_label.font_size_cmd }}{{ spec.abstract_en_keyword_label.font_en }} \textbf{Key words:}{{ '}' }}
+  {{ '{' }}{{ spec.abstract_en_keyword_body.font_size_cmd }}{{ spec.abstract_en_keyword_body.font_en }} #1 {{ '}' }}
+  \par
+}

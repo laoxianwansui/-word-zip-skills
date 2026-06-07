@@ -1,0 +1,51 @@
+% ========================================
+% 第 {{ chapter_num }} 章
+% ========================================
+
+\chapter{{ '{' }}<<< 请输入第{{ chapter_num }}章标题 >>>{{ '}' }}
+
+% 正文格式: {{ spec.body_text.font_cn }} {{ spec.body_text.font_size_cmd }}, 首行缩进 {{ spec.body_text.first_line_indent }}
+{{ spec.body_text.font_size_cmd }}{{ spec.body_text.font_cn }}
+
+<<< 请在此处填写第{{ chapter_num }}章正文内容。
+
+正文采用小四号宋体，首行缩进两个字符。
+
+引用参考文献示例：本文的研究方法参考了张三等人的工作 \cite{ref_journal}。
+
+如需插入图片，使用以下格式：
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/example.png}
+  \caption{图 {{ chapter_num }}.1 <<< 图片标题 >>>}
+  \label{fig:example}
+\end{figure}
+
+如需插入表格，使用以下格式：
+\begin{table}[H]
+  \centering
+  \caption{表 {{ chapter_num }}.1 <<< 表格标题 >>>}
+  \label{tab:example}
+  \begin{tabular}{cccc}
+    \toprule
+    <<< 列1 >>> & <<< 列2 >>> & <<< 列3 >>> & <<< 列4 >>> \\
+    \midrule
+    <<< 数据 >>> & <<< 数据 >>> & <<< 数据 >>> & <<< 数据 >>> \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+如需插入公式：
+\begin{equation}
+  E = mc^2
+  \label{eq:example}
+\end{equation}
+公式编号自动生成为 ({{ chapter_num }}-1), ({{ chapter_num }}-2) ... >>>
+
+\section{{ '{' }}<<< 请输入第{{ chapter_num }}章第1节标题 >>>{{ '}' }}
+
+<<< 请在此处填写第{{ chapter_num }}.1节正文内容。 >>>
+
+\subsection{{ '{' }}<<< 请输入第{{ chapter_num }}章第1节第1小节标题 >>>{{ '}' }}
+
+<<< 请在此处填写第{{ chapter_num }}.1.1小节正文内容。 >>>

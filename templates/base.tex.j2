@@ -1,0 +1,95 @@
+% ============================================
+% 论文模板主文件 (由 thesis-template 自动生成)
+% 编译器: XeLaTeX
+% 编码: UTF-8
+% ============================================
+
+\documentclass[zihao=-4, twoside, openright]{ctexrep}
+
+% --- 宏包 ---
+\usepackage{geometry}
+
+% --- 页面设置 ---
+\geometry{
+  a4paper,
+  left={{ spec.page_setup.left_margin }}cm,
+  right={{ spec.page_setup.right_margin }}cm,
+  top={{ spec.page_setup.top_margin }}cm,
+  bottom={{ spec.page_setup.bottom_margin }}cm,
+}
+
+% --- 宏包 ---
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{amsmath, amssymb}
+\usepackage[draft]{graphicx}
+\usepackage{float}
+\usepackage{gbt7714}          % GB/T 7714 参考文献标准
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[section]{placeins}
+\usepackage{enumitem}
+
+% --- 自定义格式 ---
+\input{packages.sty}
+
+% --- 文档信息 ---
+\title{<<< 论文题目 >>>}
+\author{<<< 作者姓名 >>>}
+\date{<<< 日期 >>>}
+
+\begin{document}
+
+% ========================================
+% 封面
+% ========================================
+\input{chapters/cover}
+
+% ========================================
+% 中文摘要
+% ========================================
+\input{chapters/abstract_cn}
+
+% ========================================
+% 英文摘要
+% ========================================
+\input{chapters/abstract_en}
+
+% ========================================
+% 目录
+% ========================================
+\tableofcontents
+\newpage
+
+% ========================================
+% 正文各章
+% ========================================
+
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+
+% ========================================
+% 结论
+% ========================================
+\input{chapters/conclusion}
+
+% ========================================
+% 谢辞
+% ========================================
+\input{chapters/acknowledgement}
+
+% ========================================
+% 参考文献
+% ========================================
+\input{chapters/references}
+
+% ========================================
+% 附录
+% ========================================
+\input{chapters/appendix}
+
+\end{document}

@@ -1,0 +1,11 @@
+school_name: Example University
+thesis_type: Undergraduate Thesis
+degree_level: Undergraduate
+document_title: <<< Thesis Title >>>
+cover_fields:
+  - Title
+  - Student Name
+  - Student ID
+  - College
+  - Major
+  - Supervisor

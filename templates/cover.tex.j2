@@ -1,0 +1,42 @@
+% ========================================
+% 封面
+% ========================================
+\thispagestyle{empty}
+\begin{center}
+  \vspace*{2cm}
+
+  % 学校/学院名称（可选）
+  {\heiti \zihao{2} <<< 学校名称 >>>}
+
+  \vspace{1.5cm}
+
+  % 论文类型
+  {\zihao{2}\heiti \textbf{本科毕业设计（论文）}}
+
+  \vspace{2cm}
+
+  % 论文题目
+  {
+    {{ spec.cover_title.font_size_cmd }}{{ spec.cover_title.font_cn }}
+    \textbf{<<< 请输入论文题目 >>>}
+  }
+
+  \vspace{2.5cm}
+
+  % 信息表格
+  \begin{large}
+  \begin{tabular}{rl}
+{% for field in spec.cover_fields %}
+    {{ '{' }}{{ spec.cover_info.font_cn }}{{ spec.cover_info.font_size_cmd }} {{ field }}\hspace{2em}：{{ '}' }} &
+    {{ '{' }}{{ spec.cover_info.font_cn }}{{ spec.cover_info.font_size_cmd }} <<< {{ field }} >>> {{ '}' }} \\[0.8em]
+{% endfor %}
+  \end{tabular}
+  \end{large}
+
+  \vfill
+
+  % 日期
+  {\large <<< 年\hspace{1em}月\hspace{1em}日 >>>}
+
+\end{center}
+\newpage
